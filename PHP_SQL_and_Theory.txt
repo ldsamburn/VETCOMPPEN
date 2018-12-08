@@ -1,0 +1,36 @@
+
+Team and Tech Team Resource Assessment-Software Developer
+
+Anthony C. Amburn
+
+Theory.
+
+One way to use abstraction might be to create the "pet" abstract class creating place holder member functions that the classes "cat" and "dog" might use to further refine themselves.  I chose not to do so for expeditious reasons more than anything.  I create a base "pet" class that had inherited properties and member functions and let the "dog" and "cat classes inherit those while modifying what was needed to meet the basic functionality.
+
+I was not concerned about the performance of this simple program. I have built many embedded/real-time systems that were performance driven. I did use an associative array of "pet" classes so I could contain many dogs and cats simply indexed by their names.  This made any lookup tasks mute.  Changing the name of the index, or pet name, was as simple as a reassignment of the class array. 
+
+
+
+SQL:
+
+A simple 2 table database.  Pets contains all of the relevant data and the NameList table that keeps all of the old names and points back, via a FK many to one, to the Pets table.  No indexes were created for performance as I didn't see a need for tuning the small db.
+
+Create Table Pets  (
+            PET_ID int auto_increment ,
+            name varchar(255), 
+            int age, 
+            sound varchar(255),
+            Primary Key (PET_ID)
+);
+      
+Create Table NameList(
+             Names PET_ID foriegn_key,
+             name varchar(255)
+);
+
+
+            
+            
+            
+
+
